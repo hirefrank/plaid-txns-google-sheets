@@ -88,7 +88,7 @@ function getTransactionHistory(start_date, end_date) {
   var sheet = ss.getSheetByName(SHEET);
   var last_row = sheet.getLastRow();
   var txns_ids = getTransactionIds(sheet.getRange(2,7,last_row,1));
-   
+    
   // add each transaction as a new row in the sheet
   for (i in transactions){
     if (transactions[i].pending == false) {
@@ -102,13 +102,13 @@ function getTransactionHistory(start_date, end_date) {
           transactions[i].name,
           transactions[i].amount,
           transactions[i].iso_currency_code,
-          transactions[i].category[0],
+          transactions[i].category.toString(),
           transactions[i].transaction_type,
           transactions[i].transaction_id,
           transactions[i].account_id,
-          transactions[i].amount < 0 ? 'true' : 'false'
+          transactions[i].category.toString() == 'Transfer,Credit' ? 'true' : 'false'
         ]
-          
+        
         // added below the lowest row in the sheet
         sheet.appendRow(row);
       }
