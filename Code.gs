@@ -17,7 +17,7 @@ var SHEET = PropertiesService.getScriptProperties().getProperty('sheet');
 function run() {
   // days in reverse to scan for transactions
   // pending transactions could take up to 5 days to clear
-  const DAYS_IN_REVERSE = PropertiesService.getScriptProperties().getProperty('days_in_reverse') || 6;
+  const DAYS_IN_REVERSE = 6;
    
   // create date ranges
   var start_date = new Date();
