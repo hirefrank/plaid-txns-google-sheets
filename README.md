@@ -7,7 +7,7 @@ Easily sync financial transactions using [Plaid](https://plaid.com) to Google Sh
 1. Sign up for a developer account with [Plaid](https://plaid.com).
 1. Create a new [Google Sheet](http://sheet.new) and open the Script editor. (Tools > Script editor)
 1. Copy the contents of `Code.gs` into the empty script.
-1. Create the your desired script properties -- see below. (File > Project properties > Script properties)
+1. Create the script properties -- see below. (File > Project properties > Script properties)
 
 ## Usage
 
