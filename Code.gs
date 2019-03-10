@@ -25,6 +25,10 @@ function run() {
   start_date.setDate(start_date.getDate() - DAYS_IN_REVERSE);
   
   getTransactionHistory(formatDate(start_date), formatDate(end_date));
+  
+  // 5s pause to prevent the functions running synchronously 
+  Utilities.sleep(5000);
+  cleanup();
 }
 
 /**
@@ -159,9 +163,9 @@ function cleanup() {
   var sheet = ss.getSheetByName(SHEET);
   
   sheet.getRange(1, 1, sheet.getMaxRows(), sheet.getMaxColumns()).activate();
-  spreadsheet.getActiveRangeList().setHorizontalAlignment('left');
-  spreadsheet.getRange('A:A').activate();
-  spreadsheet.getActiveSheet().sort(1, false);
+  sheet.getActiveRangeList().setHorizontalAlignment('left');
+  sheet.getRange('A:A').activate();
+  sheet.sort(1, false);
 };
         
 /**
